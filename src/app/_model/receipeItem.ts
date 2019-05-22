@@ -1,4 +1,4 @@
-export interface Receipe {
+export interface ReceipeItem {
     id: string;
     title: string;
     imageUrl: string;

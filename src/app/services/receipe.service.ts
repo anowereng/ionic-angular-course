@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Receipe } from '../_model/receipe';
+import { ReceipeItem } from '../_model/receipeItem';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +8,7 @@ export class ReceipeService {
 
   constructor() { }
 
-  private receipes: Receipe[] = [
+  private receipes: ReceipeItem[] = [
     {
       id: '1',
       title: 'Chicken Biryani',
@@ -32,10 +32,10 @@ export class ReceipeService {
     }
   ];
   getAllReceipes() {
-    return [this.receipes]
+    return [...this.receipes];
   }
-  getReceipe(receipeId: string){
-    return { ...this.receipes.find(receipe => {
+  getReceipe(receipeId: string) {
+    return {...this.receipes.find(receipe => {
       return receipe.id === receipeId;
     })
   };
